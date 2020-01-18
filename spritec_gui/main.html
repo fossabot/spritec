@@ -5,9 +5,149 @@
     <title>Spritec</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+    <!-- Bulma -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <script defer src="./fontawesome.js"></script>
+
+    <link rel="stylesheet" href="./css/main.css">
   </head>
-  <body>
-    <small id="spritec-version" />
+  <body class="is-marginless">
+    <div class="columns is-gapless is-marginless">
+      <div id="spritec-container" class="column is-paddingless">
+        <canvas id="spritec-canvas" width="512" height="512"></canvas>
+      </div>
+      <div class="column is-narrow">
+        <nav id="import-panel" class="panel">
+          <p class="panel-heading">
+          Convert model
+          </p>
+          <div class="panel-block">
+            <div class="field">
+              <label class="label">Select model</label>
+              <p class="control">
+                <div class="field has-addons"/>
+                  <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                      <select name="country">
+                        <option value="bigboi.gltf">bigboi.gltf</option>
+                        <option value="knight-dummy.gltf">knight-dummy.gltf</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <button type="submit" class="button is-link">Import Model</button>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+          <div class="panel-block">
+            <div class="field">
+              <label class="label">Animation</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Idle</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-block">
+            <div class="field">
+              <label class="label">Camera</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Custom</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-block is-block">
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Width</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="number" min="1">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Height</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="number" min="1">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--
+          <a class="panel-block is-active">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            bulma
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            marksheet
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            minireset.css
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-book" aria-hidden="true"></i>
+            </span>
+            jgthms.github.io
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-code-branch" aria-hidden="true"></i>
+            </span>
+            daniellowtw/infboard
+          </a>
+          <a class="panel-block">
+            <span class="panel-icon">
+              <i class="fas fa-code-branch" aria-hidden="true"></i>
+            </span>
+            mojs
+          </a>
+          <label class="panel-block">
+            <input type="checkbox">
+            remember me
+          </label>
+          <div class="panel-block">
+            <button class="button is-link is-outlined is-fullwidth">
+              Reset all filters
+            </button>
+          </div>
+          -->
+          <div class="panel-block">
+            <button class="button is-fullwidth is-primary">
+              Attach to spritesheet
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
   </body>
   <script>
     require('./main.js')

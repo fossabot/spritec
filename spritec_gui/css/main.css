@@ -1,0 +1,17 @@
+#spritec-container {
+  background: #282828;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: auto;
+}
+
+#spritec-canvas {
+  background-image: url('../assets/transparent-bg.svg');
+}
+
+#import-panel {
+  height: 100vh;
+  overflow: auto;
+}
